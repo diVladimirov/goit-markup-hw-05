@@ -23,6 +23,7 @@ font-family: 'Roboto', sans-serif;
   --footer-secondary-color: rgba(255, 255, 255, 0.6);
   --main-transition-duration: 250ms;
   --main-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  --overlay-background-color: rgba(33, 150, 243, 0.9);
 }
 
 body {
@@ -592,6 +593,37 @@ img {
   border-bottom: 1px solid #eeeeee;
   border-left: 1px solid #eeeeee;
 }
+
+.project-list-overlay-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateY(100%);
+  transition: transform var(--main-transition-duration)
+    var(--main-transition-timing-function);
+  width: 100%;
+  height: 100%;
+  font-size: 18px;
+  line-height: 1.56;
+  letter-spacing: 0.03em;
+  color: var(--seconadry-accent-color);
+  background-color: var(--overlay-background-color);
+  padding-top: 63px;
+  padding-left: 24px;
+  padding-bottom: 63px;
+  padding-right: 24px;
+}
+
+.project-list-link:hover .overlay,
+.project-list-link:focus .overlay {
+  transform: translateY(0%);
+}
+
 /* Regular customers */
 .clients {
   padding-bottom: 94px;
