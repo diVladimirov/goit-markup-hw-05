@@ -569,6 +569,11 @@ img {
   margin-bottom: 30px;
 }
 
+.project-list-link {
+  transition: box-shadow var(--main-transition-duration)
+    var(--main-transition-timing-function);
+}
+
 .project-list-link:hover,
 .project-list-link:focus {
   display: block;
