@@ -673,17 +673,16 @@ img {
   width: 100vw;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.2);
-  transform: scale(1);
   transition: opacity 800ms var(--main-transition-timing-function),
-    visibility 800ms var(--main-transition-timing-function),
-    transform 800ms var(--main-transition-timing-function);
+    visibility 800ms var(--main-transition-timing-function);
 }
 
 .modal {
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform 800ms var(--main-transition-timing-function);
   width: 528px;
   height: 581px;
   background: #ffffff;
@@ -712,5 +711,8 @@ img {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-  transform: scale(0.1);
+}
+
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) scale(0.1);
 }
